@@ -9,22 +9,33 @@
   <welcome-file>index.html</welcome-file>
    
   <servlet>
-	<servlet-name>JerseyApplication</servlet-name>
+    <servlet-name>JerseyApplication</servlet-name>
 
-	<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
-	<init-param>
+	  <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+    <init-param>
 
       <!--This tells Jersey to look at the Application.java file for the resource config-->
-	  <param-name>javax.ws.rs.Application</param-name>
-	  <param-value>com.tschnob.simple.java.server.main.Application</param-value>
-	</init-param>
-	<load-on-startup>1</load-on-startup>
+	     <param-name>javax.ws.rs.Application</param-name>
+	     <param-value>com.tschnob.simple.java.server.main.Application</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
-	<servlet-name>JerseyApplication</servlet-name>
+    <servlet-name>JerseyApplication</servlet-name>
 
     <!--Any request with /api/ prepending it will be picked up through Jersey-->
-	<url-pattern>/api/*</url-pattern>
+    <url-pattern>/api/*</url-pattern>
+  </servlet-mapping>
+  
+  <!--Webjars servlet-->
+  <servlet>
+    <servlet-name>WebjarsServlet</servlet-name>
+    <servlet-class>org.webjars.servlet.WebjarsServlet</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>WebjarsServlet</servlet-name>
+      <url-pattern>/webjars/*</url-pattern>
   </servlet-mapping>
   
   <filter>
@@ -39,7 +50,7 @@
   
   <listener>
     <!--Sets Main.java as the servlet contest listener-->
-	<listener-class>com.tschnob.simple.java.server.main.Main</listener-class>
+    <listener-class>com.tschnob.simple.java.server.main.Main</listener-class>
   </listener>
 
 </web-app>

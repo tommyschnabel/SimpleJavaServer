@@ -11,6 +11,7 @@ Some cool technologies this uses:
 * Gradle  - Building
 * Jetty   - Servlet Container
 * Jackson - JSON serialization and deserialization
+* Webjars - Serving up web-side libraries
 
 To startup the server with Jetty, just run this from the terminal in the root directory of the project:
 ./gradlew jettyRun
