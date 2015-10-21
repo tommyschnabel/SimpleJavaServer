@@ -2,6 +2,8 @@ package com.tschnob.simple.java.server.main;
 
 import javax.inject.Inject;
 
+import com.tschnob.simple.java.server.main.test.TestApi;
+import com.tschnob.simple.java.server.main.test.TestExceptionMapper;
 import org.glassfish.hk2.api.ServiceLocator;
 import org.glassfish.jersey.jackson1.Jackson1Feature;
 import org.glassfish.jersey.server.ResourceConfig;
@@ -22,6 +24,10 @@ public class Application extends ResourceConfig {
         //Gets Jackson all squared away with Jersey
 		register(Jackson1Feature.class);
 		register(DefaultObjectMapperProvider.class);
+
+        //Register apis and other Jersey things here
+        register(TestApi.class);
+        register(TestExceptionMapper.class);
 	}
 
 }

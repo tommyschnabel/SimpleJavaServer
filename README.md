@@ -14,4 +14,4 @@ Some cool technologies this uses:
 * Webjars - Serving up web-side libraries
 
 To startup the server with Jetty, just run this from the terminal in the root directory of the project:
-./gradlew jettyRun
+`./gradlew jettyRun`

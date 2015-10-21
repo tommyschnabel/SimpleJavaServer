@@ -10,7 +10,28 @@
     
     <div ng-controller="myController">
       {{message}}
+
+      <div>
+        Status: <span ng-bind="status"></span>
+      </div>
+
+      <div>
+        <input type="text" ng-model="name" placeholder="Type your name"/>
+        <button ng-click="sendName()">Send name to server</button>
+        Server says your name is: <span ng-bind="nameFromServer"></span>
+      </div>
+
+      <div>
+        <button ng-click="throwServerError()">Throw server error</button>
+      </div>
+      <div>
+        <div>
+          <span ng-bind="serverError.status"></span> - <span ng-bind="serverError.statusText"></span>
+        </div>
+        <button ng-click="serverError = null">Clear error</button>
+      </div>
     </div>
+
   </body>
   <script src="webjars/jquery/2.0.3/jquery.min.js"></script>
   <script src="webjars/angularjs/1.4.4/angular.min.js"></script>
